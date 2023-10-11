@@ -1,5 +1,5 @@
 <!-- Inizio Navbar! -->
-<nav class="navbar navbar-expand-lg  @if(Route::currentRouteName() =='welcome') nav-color @else bg-danger @endif fixed-top ">
+<nav class="navbar navbar-expand-lg  @if(Route::currentRouteName() =='welcome') nav-color @else bg-dark @endif fixed-top ">
     <div class="container-fluid">
       <a class="navbar-brand white" href="#">&copy;SpazioLove</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <a class="nav-link white" href="{{route('contatti')}}">Contatti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link white" href="">Servizi</a>
+            <a class="nav-link white" href="{{route('article')}}">Aggiungi i tuoi articoli</a>
           </li>
           
         </ul>

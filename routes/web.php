@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,16 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/',[PublicController::class,'welcome'])->name('welcome');
 
-Route::get('/Contatti', function(){
-    return view('contatti');
-})->name('contatti');
+Route::get('/Contatti',[PublicController::class,'contatti'])->name('contatti');
 
 Route::post('/Contatti/submit',[PublicController::class,'contattaci_submit'])->name('contattaci');
 
-Route::get('/Contatti/ringraziamento', function () {
-    return view('ringraziamento');
-})->name('ringraziamento');
+Route::get('/Contatti/ringraziamento',[PublicController::class, 'ringraziamento'])->name('ringraziamento');
+
+Route::get('/articoli/create', [ArticleController::class,'article'])->name('article');
+
+Route::post('/articoli/store',[ArticleController::class, 'article_submit'])->name('article_submit');
